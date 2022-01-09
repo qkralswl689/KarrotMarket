@@ -1,0 +1,212 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+#container {
+  margin: 10px 10px;
+  padding: 20px;
+  border: 1px solid #bcbcbc;
+  height: 600px;
+}
+#header {
+  padding: 20px;
+  margin-bottom: 20px;
+  /* border: 1px solid #bcbcbc;*/
+}
+#content {
+  /* padding: 20px; */
+  /* margin-top: 30%; */
+  margin-bottom: 10%;
+  /* border: 1px solid #bcbcbc;*/
+}
+#sidebar {
+  padding: 20px;
+  margin-bottom: 20px;
+  /* border: 1px solid #bcbcbc; */
+}
+#footer {
+  padding: 20px;
+  /* border: 1px solid #bcbcbc; */
+}
+#header_login {
+  margin-top: 5%;
+}
+#login-from {
+  margin-top: 20%;
+}
+#footerJoinBtn {
+  margin-top: 30%;
+}
+
+#header_home {
+  height: 5%;
+  border-bottom: 1px solid #bcbcbc;
+  align-content: center;
+}
+#footer_home {
+  float: left;
+  width: 94%;
+  height: 10%; /* footer의 높이 */
+  position: absolute;
+  bottom: 0;
+  left: 3%;
+  border-top: 1px solid #bcbcbc;
+  align-content: center;
+}
+.btn {
+  width: 100%;
+  background-color: coral;
+  color: white;
+  border: 0;
+  outline: 0;
+}
+.input {
+  width: 100%;
+  margin: 5% 0px 5% 0px;
+}
+.joinBtn {
+  margin-top: 10%;
+}
+
+@media (min-width: 600px) {
+  #container {
+    min-height: 100%;
+  }
+  #content {
+    width: 580px;
+    float: left;
+  }
+  #sidebar {
+    width: 260px;
+    float: right;
+  }
+  #footer {
+    clear: both;
+  }
+}

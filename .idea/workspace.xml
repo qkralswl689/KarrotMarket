@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a186bab1-4881-4e45-96c4-9d7eb075ca2e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/join.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karrotmarket/._.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karrotmarket/._HELP.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karrotmarket/._build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karrotmarket/._gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karrotmarket/._gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karrotmarket/._gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karrotmarket/._settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karrotmarket/._src" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karrotmarket/gradle/._wrapper" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karrotmarket/gradle/wrapper/._gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karrotmarket/gradle/wrapper/._gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karrotmarket/src/._main" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karrotmarket/src/._test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karrotmarket/src/main/._java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karrotmarket/src/main/._resources" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karrotmarket/src/main/java/._com" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karrotmarket/src/main/java/com/._karrot" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karrotmarket/src/main/java/com/karrot/._karrotmarket" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karrotmarket/src/main/java/com/karrot/karrotmarket/._KarrotmarketApplication.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karrotmarket/src/main/java/com/karrot/karrotmarket/KarrotmarketApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/karrotmarket/src/main/java/com/karrot/karrotmarket/KarrotmarketApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/karrotmarket/src/main/resources/._application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karrotmarket/src/main/resources/._static" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karrotmarket/src/main/resources/._templates" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/karrotmarket/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/karrotmarket/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="23Q1prFGBhjQzsuTPSBMCfLMUhX" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a186bab1-4881-4e45-96c4-9d7eb075ca2e" name="Changes" comment="" />
+      <created>1641651684673</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1641651684673</updated>
+    </task>
+    <servers />
+  </component>
+</project>

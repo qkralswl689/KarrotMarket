@@ -3,7 +3,8 @@
  <head>
     <meta charset="utf-8" />
     <title>Main</title>
-    <link rel="stylesheet" href="style.css" />
+<!--    <link rel="stylesheet" href="style.css" />-->
+     <link rel="stylesheet" href="../css/style.css" th:href="@{../css/style.css}">
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- <style>
       #jb-container {
@@ -55,13 +56,16 @@
   <body>
     <div id="container">
       <div id="header">
-        <img id="img_karrot" src="images/당근.png" alt="Karrot" style="max-width: 100%; height: auto; margin-top: 20%" />
-        <p style="font-size: 20px; text-align: center; margin-top: 20%">당신 근처의 Karrot 마켓</p>
+
+          <!--<img id="img_karrot" src="images/당근.png" alt="Karrot" style="max-width: 100%; height: auto; margin-top: 20%" />-->
+          <img id="img_karrot" src="img/당근.png" alt="Karrot" style="max-width: 100%; height: auto; margin-top: 20%" />
+
+          <p style="font-size: 20px; text-align: center; margin-top: 20%">당신 근처의 Karrot 마켓</p>
         <p style="font-size: 15px; text-align: center; margin-top: 10%">이제 내 동내에서</p>
         <p style="font-size: 15px; text-align: center; margin-top: 3%">간편하게 중고거래하자</p>
       </div>
       <div id="content">
-        <button onclick="location.href='join.html'" class="button btn">시작하기</button>
+        <button th:onclick="|location.href='/html/items'|" onclick="location.href='/join'"  class="button btn">시작하기</button>
       </div>
       <div id="footer">
         <p style="font-size: 15px; text-align: center">

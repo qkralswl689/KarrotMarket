@@ -169,15 +169,15 @@ table {
   border-bottom: 1px solid #bcbcbc;
   align-content: center;
 }
-#footer_home {
-  float: left;
+#footer_home{
   width: 94%;
-  height: 10%; /* footer의 높이 */
+  height: 20%; 
   position: absolute;
   bottom: 0;
   left: 3%;
   border-top: 1px solid #bcbcbc;
   align-content: center;
+  /* clear: both; */
 }
 .btn {
   width: 100%;
@@ -193,6 +193,15 @@ table {
 .joinBtn {
   margin-top: 10%;
 }
+.homecommon{
+    display: inline-block;
+    width: 50%;
+    height: auto;
+    float: left;
+    margin-top: 2%;
+    align-content: center;
+}
+
 
 @media (min-width: 600px) {
   #container {

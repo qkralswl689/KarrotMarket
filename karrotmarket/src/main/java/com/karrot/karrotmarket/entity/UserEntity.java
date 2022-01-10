@@ -1,3 +1,4 @@
+/*
 package com.karrot.karrotmarket.entity;
 
 import lombok.AllArgsConstructor;
@@ -32,3 +33,4 @@ public class UserEntity {
     private String nickName;
 
 }
+*/

@@ -1,3 +1,4 @@
+/*
 package com.karrot.karrotmarket.repository;
 
 import com.karrot.karrotmarket.entity.UserEntity;
@@ -13,3 +14,4 @@ public interface UserInfoRepository extends JpaRepository<UserEntity,Long> {
     List<UserEntity> findAll();
 
 }
+*/

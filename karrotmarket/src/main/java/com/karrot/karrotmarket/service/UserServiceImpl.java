@@ -1,3 +1,4 @@
+/*
 package com.karrot.karrotmarket.service;
 
 import com.karrot.karrotmarket.entity.UserEntity;
@@ -29,3 +30,4 @@ public class UserServiceImpl implements UserService {
         return "fail";
     }
 }
+*/

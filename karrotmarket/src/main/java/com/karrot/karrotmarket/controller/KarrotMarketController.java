@@ -1,8 +1,11 @@
 package com.karrot.karrotmarket.controller;
 
+import com.karrot.karrotmarket.entity.UserEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpSession;
@@ -16,7 +19,7 @@ public class KarrotMarketController {
         return "index";
     }
 
-    @GetMapping("join")
+    @GetMapping("/join")
     public String join(HttpSession session, Model model) {
 
 /*
@@ -42,4 +45,8 @@ public class KarrotMarketController {
         return "html/home";
     }
 
+    @PostMapping("save")
+    public String save(@ModelAttribute UserEntity userEntity){
+        
+    }
 }

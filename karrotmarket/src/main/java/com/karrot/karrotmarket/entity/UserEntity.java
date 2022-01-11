@@ -1,13 +1,12 @@
-/*
 package com.karrot.karrotmarket.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.NoArgsConstructor;
+import com.sun.istack.NotNull;
+import lombok.*;
 
 import javax.persistence.*;
 
-
+@Getter
+@Setter
 @Builder
 @Entity
 @NoArgsConstructor
@@ -21,10 +20,16 @@ public class UserEntity {
     private Long usertIdx;
 
     @Column(name = "email")
+    @NotNull
     private String email;
 
     @Column(name = "password")
+    @NotNull
     private String password;
+
+    @Column(name = "username")
+    @NotNull
+    private String userName;
 
     @Column(name = "phonen_number")
     private String phonenNumber;
@@ -33,4 +38,3 @@ public class UserEntity {
     private String nickName;
 
 }
-*/

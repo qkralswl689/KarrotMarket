@@ -11,6 +11,7 @@
   <body>
     <div id="container">
       <div id="header_login">
+        <form action="/member/save" method="post">
         <p style="font-size: 20px; text-align: left">회원가입</p>
         <div id="login-from">
           <p style="font-size: 20px; text-align: left; margin-top: 15%">이메일(ID)</p>
@@ -24,6 +25,7 @@
           <p style="font-size: 20px; text-align: left">닉네임</p>
           <input class="input" placeholder="NICKNAME" />
         </div>
+        </form>
       </div>
       <div id="content">
         <div id="footerJoinBtn"><button class="button btn joinBtn" th:onclick="|location.href='/goToLogin'|" >가입하기</button></div>

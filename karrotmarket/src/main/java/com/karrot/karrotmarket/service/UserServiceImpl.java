@@ -1,4 +1,3 @@
-/*
 package com.karrot.karrotmarket.service;
 
 import com.karrot.karrotmarket.entity.UserEntity;
@@ -20,6 +19,9 @@ public class UserServiceImpl implements UserService {
                     UserEntity.builder()
                             .email(userVO.getEmail())
                             .password(userVO.getPassword())
+                            .userName(userVO.getUserName())
+                            .phonenNumber(userVO.getPhonenNumber())
+                            .nickName(userVO.getNickName())
                             .build()
             );
             return "Success";
@@ -30,4 +32,3 @@ public class UserServiceImpl implements UserService {
         return "fail";
     }
 }
-*/

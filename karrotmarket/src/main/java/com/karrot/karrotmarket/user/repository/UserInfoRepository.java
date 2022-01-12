@@ -1,6 +1,6 @@
-package com.karrot.karrotmarket.repository;
+package com.karrot.karrotmarket.user.repository;
 
-import com.karrot.karrotmarket.entity.UserEntity;
+import com.karrot.karrotmarket.user.entity.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

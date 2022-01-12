@@ -11,24 +11,28 @@
   <body>
     <div id="container">
       <div id="header_login">
-        <form action="/member/save" method="post">
+        <form action="/join/register" th:object="${user}" method="post">
         <p style="font-size: 20px; text-align: left">회원가입</p>
         <div id="login-from">
           <p style="font-size: 20px; text-align: left; margin-top: 15%">이메일(ID)</p>
-          <input class="input" placeholder="EMAIL" />
+          <input class="input" placeholder="EMAIL" th:filed="${user?.id}"/>
           <p style="font-size: 20px; text-align: left">비밀번호(PW)</p>
-          <input type="password" class="input" placeholder="PASSWORD" />
+          <input type="password" class="input" placeholder="PASSWORD"  th:filed=="${user?.pw}"/>
           <p style="font-size: 20px; text-align: left">이름</p>
-          <input class="input" placeholder="NAME" />
+          <input class="input" placeholder="NAME"  th:filed="${user?.name}"/>
           <p style="font-size: 20px; text-align: left">핸드폰번호</p>
-          <input class="input" placeholder="PHONE" />
+          <input class="input" placeholder="PHONE" th:filed="${user?.phone}"/>
           <p style="font-size: 20px; text-align: left">닉네임</p>
-          <input class="input" placeholder="NICKNAME" />
+          <input class="input" placeholder="NICKNAME"  th:filed="${user?.nicname}"/>
         </div>
         </form>
       </div>
       <div id="content">
-        <div id="footerJoinBtn"><button class="button btn joinBtn" th:onclick="|location.href='/goToLogin'|" >가입하기</button></div>
+<!--
+        <div id="footerJoinBtn"><button class="button btn joinBtn" type="submit" th:onclick="|location.href='/goToLogin'|" >가입하기</button></div>
+-->
+
+        <div id="footerJoinBtn"><button class="button btn joinBtn" type="submit" >가입하기</button></div>
       </div>
     </div>
   </body>

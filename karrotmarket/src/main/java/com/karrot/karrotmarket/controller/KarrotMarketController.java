@@ -33,7 +33,7 @@ public class KarrotMarketController {
         return "html/join";
 
     }
-
+/*
     @RequestMapping(value="/register",method=RequestMethod.GET)
     public String registration(Model model){
         model.addAttribute("userForm", new UserEntity());
@@ -56,7 +56,7 @@ public class KarrotMarketController {
 
         userService.register(userdto);
         return "/redirect:/goToLogin";
-    }
+    }*/
 
     @GetMapping("/goToLogin")
     public String goToLogin(HttpSession session, Model model) {
@@ -71,6 +71,11 @@ public class KarrotMarketController {
     @GetMapping("/home")
     public String home(HttpSession session, Model model) {
         return "html/home";
+    }
+
+    @GetMapping("/salePage")
+    public String salePage(HttpSession session, Model model) {
+        return "html/salePage";
     }
 
 

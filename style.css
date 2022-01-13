@@ -1,0 +1,342 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+a,
+abbr,
+acronym,
+address,
+applet,
+article,
+aside,
+audio,
+b,
+big,
+blockquote,
+body,
+canvas,
+caption,
+center,
+cite,
+code,
+dd,
+del,
+details,
+dfn,
+div,
+dl,
+dt,
+em,
+embed,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+label,
+legend,
+li,
+mark,
+menu,
+nav,
+object,
+ol,
+output,
+p,
+pre,
+q,
+ruby,
+s,
+samp,
+section,
+small,
+span,
+strike,
+strong,
+sub,
+summary,
+sup,
+table,
+tbody,
+td,
+tfoot,
+th,
+thead,
+time,
+tr,
+tt,
+u,
+ul,
+var,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol,
+ul {
+    list-style: none;
+}
+blockquote,
+q {
+    quotes: none;
+}
+blockquote:after,
+blockquote:before,
+q:after,
+q:before {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+#container {
+    margin: 10px;
+    padding: 20px;
+    border: 1px solid #bcbcbc;
+    height: 600px;
+}
+#header {
+    padding: 20px;
+    margin-bottom: 20px;
+    /* border: 1px solid #bcbcbc;*/
+}
+#content {
+    /* padding: 20px; */
+    /* margin-top: 30%; */
+    margin-bottom: 10%;
+    /* border: 1px solid #bcbcbc;*/
+}
+#sidebar {
+    padding: 20px;
+    margin-bottom: 20px;
+    /* border: 1px solid #bcbcbc; */
+}
+#footer {
+    padding: 20px;
+    /* border: 1px solid #bcbcbc; */
+}
+#header_login {
+    margin-top: 5%;
+}
+#login-from {
+    margin-top: 20%;
+}
+#footerJoinBtn {
+    margin-top: 30%;
+}
+
+#header_home {
+    height: 5%;
+    border-bottom: 1px solid #bcbcbc;
+    align-content: center;
+}
+#footer_home {
+    width: 94%;
+    height: 20%;
+    position: absolute;
+    bottom: 0;
+    left: 3%;
+    border-top: 1px solid #bcbcbc;
+    align-content: center;
+    /* clear: both; */
+}
+#container_sale {
+    display: inline-block;
+    float: left;
+    width: 100%;
+    height: 15%;
+    border-bottom: 1px solid #bcbcbc;
+}
+#product_footer{
+    width: 94%;
+    height: 10%;
+    position: absolute;
+    bottom: 0;
+    left: 3%;
+    border-top: 1px solid #bcbcbc;
+    align-content: center;
+}
+.userProfile {
+    width: 100%;
+    height: 11%;
+    bottom: 0;
+    left: 3%;
+    border-top: 1px solid #bcbcbc;
+    align-content: center;
+     border-bottom: 1px solid #bcbcbc;
+ 
+}
+.headerproduct{
+    width:100%;
+    height:40%;
+    background-image:url('https://github.com/qkralswl689/KarrotMarket/blob/main/images/%EC%83%81%ED%92%88%EC%9D%B4%EB%AF%B8%EC%A7%801.png?raw=true');
+    border: 1px solid black;
+}
+.btn {
+    width: 100%;
+    background-color: coral;
+    color: white;
+    border: 0;
+    outline: 0;
+}
+.input {
+    width: 100%;
+    margin: 5% 0;
+}
+.joinBtn {
+    margin-top: 10%;
+}
+.homecommon {
+    display: inline-block;
+    width: 50%;
+    height: auto;
+    float: left;
+    margin-top: 2%;
+    align-content: center;
+}
+.imagebox {
+    display: inline-block;
+    float: left;
+    width: 25%;
+    height: 70%;
+    margin-top:5%;
+    padding-left: 5%;
+    border: 1px solid #bcbcbc;
+
+}
+.productcommon {
+    display: inline-block;
+    width: 30%;
+    height: auto;
+    float: left;
+    margin-top: 2%;
+    align-content: center;
+}
+.productcommonimg {
+    display: inline-block;
+    width: 20%;
+    height: auto;
+    float: left;
+    margin-top: 2%;
+    align-content: center;
+}
+.photocommon {
+    display: inline-block;
+    width: 20%;
+    height: auto;
+    float: left;
+    margin-top: 2%;
+    align-content: center;
+}
+.profilecommon{
+ display: inline-block;
+    width: 30%;
+    height: auto;
+    float: left;
+    margin-top: 2%;
+    align-content: center;
+   
+}
+.saleTitle{
+   display: inline-block;
+    float: left;
+    width: 100%;
+    height: 10%;
+    border-bottom: 1px solid #bcbcbc;
+}
+.saleCategory{
+  display: inline-block;
+    float: left;
+    width: 100%;
+    height: 5%;
+    border-bottom: 1px solid #bcbcbc;
+}
+
+.salePrice{
+    display: inline-block;
+    float: left;
+    width: 100%;
+    height: 5%;
+    border-bottom: 1px solid #bcbcbc;
+}
+
+.saleDiscription{
+  display: inline-block;
+    float: left;
+    width: 100%;
+    height: 40%;
+}
+.productContents{
+   overflow: auto;
+   width:100%;
+   height:40%;
+    border: 1px solid #bcbcbc;
+}
+.productInfo{
+    width:100%;
+    height:20%;
+
+     border: 1px solid #bcbcbc;
+ 
+}
+.userSoldProducts{
+     width:100%;
+    height:30%;
+     border: 1px solid #bcbcbc;
+ 
+}
+@media (min-width: 600px) {
+    #container {
+        min-height: 100%;
+    }
+    #content {
+        width: 580px;
+        float: left;
+    }
+    #sidebar {
+        width: 260px;
+        float: right;
+    }
+    #footer {
+        clear: both;
+    }
+}

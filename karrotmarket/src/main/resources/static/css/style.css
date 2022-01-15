@@ -179,6 +179,15 @@ table {
     align-content: center;
     /* clear: both; */
 }
+#footer_profile {
+    width: 94%;
+    height: 10%;
+    position: absolute;
+    bottom: 0;
+    left: 3%;
+    align-content: center;
+    /* clear: both; */
+}
 #container_sale {
     display: inline-block;
     float: left;
@@ -186,30 +195,15 @@ table {
     height: 15%;
     border-bottom: 1px solid #bcbcbc;
 }
-#product_footer{
-    width: 94%;
-    height: 10%;
-    position: absolute;
-    bottom: 0;
-    left: 3%;
-    border-top: 1px solid #bcbcbc;
-    align-content: center;
-}
-.userProfile {
+#contentMypage{
+
     width: 100%;
-    height: 11%;
-    bottom: 0;
-    left: 3%;
-    border-top: 1px solid #bcbcbc;
-    align-content: center;
-     border-bottom: 1px solid #bcbcbc;
- 
+    height: 80%;
 }
-.headerproduct{
-    width:100%;
-    height:40%;
-    background-image:url('https://github.com/qkralswl689/KarrotMarket/blob/main/images/%EC%83%81%ED%92%88%EC%9D%B4%EB%AF%B8%EC%A7%801.png?raw=true');
-    border: 1px solid black;
+#contentProfile{
+      width: 100%;
+    height: 80%;
+    align-content: center;
 }
 .btn {
     width: 100%;
@@ -237,44 +231,9 @@ table {
     display: inline-block;
     float: left;
     width: 25%;
-    height: 70%;
-    margin-top:5%;
-    padding-left: 5%;
+    height: 50%;
     border: 1px solid #bcbcbc;
 
-}
-.productcommon {
-    display: inline-block;
-    width: 30%;
-    height: auto;
-    float: left;
-    margin-top: 2%;
-    align-content: center;
-}
-.productcommonimg {
-    display: inline-block;
-    width: 20%;
-    height: auto;
-    float: left;
-    margin-top: 2%;
-    align-content: center;
-}
-.photocommon {
-    display: inline-block;
-    width: 20%;
-    height: auto;
-    float: left;
-    margin-top: 2%;
-    align-content: center;
-}
-.profilecommon{
- display: inline-block;
-    width: 30%;
-    height: auto;
-    float: left;
-    margin-top: 2%;
-    align-content: center;
-   
 }
 .saleTitle{
    display: inline-block;
@@ -305,35 +264,34 @@ table {
     width: 100%;
     height: 40%;
 }
-.productContents{
-   overflow: auto;
-   width:100%;
-   height:40%;
-    border: 1px solid #bcbcbc;
+.mypagecommon {
+    display: inline-block;
+    width: 100%;
+    height: auto;
+    float: left;
+    margin-top: 5%;
+    align-content: center;
 }
-.productInfo{
-    width:100%;
-    height:20%;
-
-     border: 1px solid #bcbcbc;
- 
+.mypagetop{
+    margin-top: 10%;
 }
-.userSoldProducts{
-     width:100%;
-    height:30%;
-     border: 1px solid #bcbcbc;
- 
+.mypage{
+    display: inline-block;
+    float: left;
+    width: 100%;
 }
-.plusBtn{
-display:scroll;
-position:fixed;
-width:50px;
-height:auto;
-bottom:20%;
-right:10px;
-border-radius:50%;
-text-align:center;
-background:orange;
+.modifyProfileBtn{
+    width: 100%;
+    height: 5%;
+    margin-top: 5%;
+}
+.salesinfo{
+    margin-top: 15%;
+}
+.logout{
+    width: 100;
+    text-align: center;
+    margin-top: 15%;
 }
 @media (min-width: 600px) {
     #container {

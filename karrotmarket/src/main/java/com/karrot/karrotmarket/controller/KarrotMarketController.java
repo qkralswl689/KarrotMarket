@@ -53,5 +53,15 @@ public class KarrotMarketController {
         return "html/salePage";
     }
 
+    @GetMapping("/myPage")
+    public String myPage(HttpSession session, Model model) {
+        return "html/myPage";
+    }
+
+    @GetMapping("/profile")
+    public String profile(HttpSession session, Model model) {
+        return "html/modifyProfile";
+    }
+
 
 }

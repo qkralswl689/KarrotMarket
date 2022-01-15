@@ -1,11 +1,11 @@
 package com.karrot.karrotmarket.user.service;
 
 import com.karrot.karrotmarket.user.dto.UserDto;
-import com.karrot.karrotmarket.user.entity.UserEntity;
 import com.karrot.karrotmarket.user.repository.UserInfoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
+
+import javax.transaction.Transactional;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -18,22 +18,9 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
+    @Transactional
     public String register(UserDto userDto) {
-        try {
-            userInfoRepository.save(
-                    UserEntity.builder()
-                            .email(userDto.getEmail())
-                            .password(userDto.getPassword())
-                            .userName(userDto.getUserName())
-                            .phonenNumber(userDto.getPhonenNumber())
-                            .nickName(userDto.getNickName())
-                            .build()
-            );
-            return "Success";
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        return "fail";
+       return userInfoRepository.save(userDto.toEntity()).getEmail();
     }
+
 }

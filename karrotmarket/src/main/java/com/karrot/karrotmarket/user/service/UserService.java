@@ -4,7 +4,7 @@ import com.karrot.karrotmarket.user.dto.UserDto;
 
 public interface UserService {
 
-    String register(UserDto userDto);
+    public String register(UserDto userDto);
 
 
 }

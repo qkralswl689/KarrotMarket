@@ -1,5 +1,7 @@
 package com.karrot.karrotmarket.user.entity;
 
+import com.karrot.karrotmarket.TimeEntity;
+import com.karrot.karrotmarket.user.dto.UserDto;
 import com.sun.istack.NotNull;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
@@ -21,15 +23,14 @@ import java.util.Date;
         initialValue=1, //시작값
         allocationSize=1 //메모리를 통해 할당할 범위 사이즈
 )*/
-public class UserEntity {
+public class UserEntity extends TimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "user_idx")
+    @Column(name = "userIndex")
     private Long usertIdx;
 
     @Column(name = "email")
-    @NotNull
     private String email;
 
     @Column(name = "password")
@@ -40,15 +41,11 @@ public class UserEntity {
     @NotNull
     private String userName;
 
-    @Column(name = "phonen_number")
+    @Column(name = "phonenumber")
     private String phonenNumber;
 
     @Column(name = "nickname")
     private String nickName;
-
-    @CreatedDate
-    @Column(updatable = false)
-    private Date joinDate;
 
 
 

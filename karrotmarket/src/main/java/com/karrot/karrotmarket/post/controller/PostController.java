@@ -1,6 +1,8 @@
-package com.karrot.karrotmarket.controller;
+package com.karrot.karrotmarket.post.controller;
 
 import com.karrot.karrotmarket.file.FileDto;
+import com.karrot.karrotmarket.post.service.PostServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -9,11 +11,13 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.io.File;
 import java.io.IOException;
-import java.text.SimpleDateFormat;
 import java.util.*;
 
 @RestController
-public class UploadController {
+public class PostController {
+
+    @Autowired
+    private PostServiceImpl postService;
 
     @PostMapping("/upload")
     public String uploadFile(@RequestParam MultipartFile[] uploadFiles, Model model) throws IOException {

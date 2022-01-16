@@ -1,22 +1,25 @@
 package com.karrot.karrotmarket.post.service;
 
-import com.karrot.karrotmarket.post.entity.PostEntity;
-import com.karrot.karrotmarket.post.entity.PostFileEntity;
+import com.karrot.karrotmarket.post.dto.PostDto;
+import com.karrot.karrotmarket.file.entity.FileEntity;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import java.util.List;
 
 public interface PostService {
 
-    List<PostEntity> selectBoardList() throws Exception;
+    int savePost(PostDto postDto);
 
-    void saveBoard(PostEntity post, MultipartHttpServletRequest multipartHttpServletRequest, int hitCnt) throws Exception;
+    PostDto getPost(int postIndex);
+    List<PostDto> selectBoardList() throws Exception;
 
-    PostEntity selectPostDetail(int postIndex) throws Exception;
+    void saveBoard(PostDto post, MultipartHttpServletRequest multipartHttpServletRequest, int hitCnt) throws Exception;
+
+    PostDto selectPostDetail(int postIndex) throws Exception;
 
     void deletePost(int postIndex) throws Exception;
 
-    PostFileEntity selectPostFileInformation(int fileIndex, int postIndex) throws Exception;
+    FileEntity selectPostFileInformation(int fileIndex, int postIndex) throws Exception;
 
     void deletePostFile(int fileIndex, int postIndex) throws Exception;
 }

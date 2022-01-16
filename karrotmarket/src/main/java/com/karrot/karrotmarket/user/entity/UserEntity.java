@@ -1,13 +1,10 @@
 package com.karrot.karrotmarket.user.entity;
 
-import com.karrot.karrotmarket.TimeEntity;
-import com.karrot.karrotmarket.user.dto.UserDto;
 import com.sun.istack.NotNull;
 import lombok.*;
-import org.springframework.data.annotation.CreatedDate;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.time.LocalDateTime;
 
 @Getter
 @Setter
@@ -23,7 +20,7 @@ import java.util.Date;
         initialValue=1, //시작값
         allocationSize=1 //메모리를 통해 할당할 범위 사이즈
 )*/
-public class UserEntity extends TimeEntity {
+public class UserEntity  {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -47,6 +44,8 @@ public class UserEntity extends TimeEntity {
     @Column(name = "nickname")
     private String nickName;
 
+    @Column(name="create_date")
+    private LocalDateTime createdDatetime = LocalDateTime.now();
 
 
 }

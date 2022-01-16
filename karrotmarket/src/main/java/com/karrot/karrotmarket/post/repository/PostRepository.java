@@ -1,5 +1,6 @@
 package com.karrot.karrotmarket.post.repository;
 
+import com.karrot.karrotmarket.post.dto.PostDto;
 import com.karrot.karrotmarket.post.entity.PostEntity;
 import org.springframework.data.repository.CrudRepository;
 

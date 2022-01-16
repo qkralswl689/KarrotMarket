@@ -1,5 +1,7 @@
 package com.karrot.karrotmarket.post.entity;
 
+import lombok.Builder;
+import lombok.CustomLog;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -20,7 +22,7 @@ public class PostEntity {
     @Column(name = "title")
     private String title;
 
-    @Column(name = "discription")
+    @Column(name = "disctiption")
     private String content;
 
     @Column(name = "price")
@@ -29,16 +31,26 @@ public class PostEntity {
     @Column(name="create_date")
     private LocalDateTime createdDatetime = LocalDateTime.now();
 
-    @Column(name = "modififelddate")
-    private LocalDateTime modifyDate = LocalDateTime.now();
 
-    @Column(name = "rangetown")
+   /* @Column(name = "rangetown")
     private String rangeTown;
 
     @Column(name = "like")
     private int like;
 
+    @Column(name = "userindex")
+    private int userIndex;
+*/
+    @Column(name = "fileindex")
+    private int fileIndex;
 
-
+    @Builder
+    public PostEntity(int postIndex,String title,String content,int price,int fileIndex){
+        this.postIndex = postIndex;
+        this.title = title;
+        this.content = content;
+        this.price = price;
+        this.fileIndex = fileIndex;
+    }
 
 }

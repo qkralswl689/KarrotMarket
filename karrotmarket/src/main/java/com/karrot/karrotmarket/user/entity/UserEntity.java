@@ -48,4 +48,8 @@ public class UserEntity  {
     private LocalDateTime createdDatetime = LocalDateTime.now();
 
 
+    public UserEntity(String email,String password){
+        this.email = email;
+        this.password = password;
+    }
 }

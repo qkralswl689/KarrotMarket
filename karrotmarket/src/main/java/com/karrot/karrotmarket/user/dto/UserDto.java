@@ -41,6 +41,12 @@ public class UserDto {
         this.createDate = createDate;
     }
 
+    @Builder
+    public void UerDto(String email, String password){
+        this.email = email;
+        this.password = password;
+    }
+
 
 
 

@@ -13,10 +13,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpSession;
 import java.time.LocalDate;
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
 @Controller
@@ -30,21 +32,14 @@ public class UserController {
 
     private UserInfoRepository userInfoRepository;
 
-/*    @RequestMapping(value="/register",method= RequestMethod.GET)
-    public String registration(Model model){
-        model.addAttribute("userForm", new UserEntity());
-        return "register";
+    @PostMapping("/login")
+    public String loginId(@ModelAttribute LoginDto user) {
+        if(userService.login(user)){
+            return "redirect:/home";
+        }
+        return "/login";
     }
 
-    // 회원가입 처리 후 로그인
-    @RequestMapping(value="/register",method=RequestMethod.POST)
-    public String registration(@ModelAttribute("userForm") UserEntity userForm, BindingResult bindingResult,
-                               Model model ){
-        String password = userForm.getPassword();
-        //userService.register(userForm);
-        //securityService.autologin(userForm.getUsername(),password);
-        return "/redirect:/goToLogin";
-    }*/
 
 
     @PostMapping("/register")
@@ -55,40 +50,36 @@ public class UserController {
         return "redirect:/goToLogin";
     }
 
-    @PostMapping("/login")
-    public String login(@ModelAttribute LoginDto loginDto, BindingResult bindingResult){
 
-        if (bindingResult.hasErrors()) {
-            return "login/loginForm";
-        }
-        UserEntity loginUser = userService.login(loginDto.getEmail(),loginDto.getPassword());
+ /*   @GetMapping("/read")
+    public String read( String email, Model model,HttpSession session) {
 
-        if (loginUser == null) {
-            bindingResult.reject("loginFail", "아이디 또는 비밀번호가 맞지 않습니다.");
-            return "login/loginForm";
-        }
-        return "/login";
-    }
+        UserEntity userEntity = userService.getNickname(email);
+        model.addAttribute("user",userEntity);
+     *//*   DiaryVO sessionDiary = (DiaryVO)session.getAttribute("diary");
+        model.addAttribute("diary",sessionDiary);*//*
 
-    @PostMapping("/login")
-    public String login(@RequestParam Map<String, String> map, Model model, HttpSession session) {
-        try {
-            if (map.get("userid") == null || map.get("userpwd") == null) {
-                model.addAttribute("msg", "아이디 또는 비밀번호를 입력해주세요");
-                return "error/error";
-            }
-            UserEntity user = userService.login(map);
-            if (user != null) {
-                session.setAttribute("user", user);
-            } else {
-                model.addAttribute("msg", "아이디 또는 비밀번호가 올바르지 않습니다.");
-                return "error/error";
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-            model.addAttribute("msg", "로그인 중 문제가 발생했습니다.");
-            return "error/error";
-        }
-        return "index";
-    } // end of PostMapping("login")
+       *//* //세션에 저장된 유저 값을 불러온다.
+        User loginUser = (User)session.getAttribute("ConfirmUser");
+        model.addAttribute("loginUser", loginUser);*//*
+*//*
+        UserDto userDto = userService.;
+
+        DiaryFileDto diaryFileDto = new DiaryFileDto();
+
+        diaryFileDto.setId(diaryDto.getFileId());
+        Long fileId = diaryDto.getFileId();
+
+        DiaryFileDto fileList = fileService.getFile(fileId);
+
+        diaryFileDto.setFilename(fileList.getFilename());
+        diaryFileDto.setOrigFilename(fileList.getOrigFilename());
+        diaryFileDto.setFilePath(fileList.getFilePath());
+
+
+        model.addAttribute("post", diaryDto);
+        model.addAttribute("postFile",fileList);*//*
+
+        return "/productDetail";
+    }*/
 }

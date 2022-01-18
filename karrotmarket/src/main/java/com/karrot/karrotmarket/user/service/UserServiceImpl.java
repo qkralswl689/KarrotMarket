@@ -1,13 +1,11 @@
 package com.karrot.karrotmarket.user.service;
 
+import com.karrot.karrotmarket.user.dto.LoginDto;
 import com.karrot.karrotmarket.user.dto.UserDto;
 import com.karrot.karrotmarket.user.entity.UserEntity;
 import com.karrot.karrotmarket.user.repository.UserInfoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.authority.SimpleGrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
+
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -33,7 +31,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public boolean login(UserDto user) {
+    public boolean login(LoginDto user) {
 
         UserEntity findUser = userInfoRepository.findByEmail(user.getEmail());
 
@@ -46,7 +44,7 @@ public class UserServiceImpl implements UserService {
         return true;
     }
 
-    @Override
+   /* @Override
     public UserEntity login(String loginId, String password) {
         UserEntity user = userInfoRepository.findByEmail(loginId);
 
@@ -55,14 +53,23 @@ public class UserServiceImpl implements UserService {
         }
 
         return userInfoRepository.findByEmail(loginId);
-    }
+    }*/
 
     @Override
+    public UserEntity getNickname(String email) {
+
+        UserEntity user = userInfoRepository.findByEmail(email);
+
+        UserEntity users = UserEntity.builder().nickName(user.getNickName()).build();
+        return users;
+    }
+
+  /*  @Override
     public UserEntity login(Map<String, String> map) throws Exception {
         return userInfoRepository.getById();
-    }
+    }*/
 
-    @Override
+/*    @Override
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         // 로그인을 하기 위해 가입된 user정보를 조회하는 메서드
         Optional<UserEntity> memberWrapper = Optional.ofNullable(userInfoRepository.findByEmail(email));
@@ -78,7 +85,7 @@ public class UserServiceImpl implements UserService {
 
         // 아이디, 비밀번호, 권한리스트를 매개변수로 User를 만들어 반환해준다.
         return new UserEntity(member.getEmail(), member.getPassword(), authorities);
-    }
+    }*/
 
 
 }

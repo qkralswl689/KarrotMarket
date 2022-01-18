@@ -6,6 +6,7 @@ import com.karrot.karrotmarket.file.service.FileService;
 import com.karrot.karrotmarket.file.service.FileServiceImpl;
 import com.karrot.karrotmarket.post.dto.PostDto;
 import com.karrot.karrotmarket.post.service.PostServiceImpl;
+import com.karrot.karrotmarket.user.dto.UserDto;
 import com.karrot.karrotmarket.user.entity.UserEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
@@ -120,5 +121,6 @@ public class PostController {
      model.addAttribute("log", "사진 " + multipartFileList.size() + "장 전송완료!");
      return "html템플릿 주소 :: #resultDiv";
  }
+
 
 }

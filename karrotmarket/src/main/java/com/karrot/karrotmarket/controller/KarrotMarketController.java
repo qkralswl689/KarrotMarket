@@ -63,5 +63,9 @@ public class KarrotMarketController {
         return "html/modifyProfile";
     }
 
+    @GetMapping("/productDetail")
+    public String productDetail(HttpSession session, Model model) {
+        return "html/productDetail";
+    }
 
 }

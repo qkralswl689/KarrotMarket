@@ -20,6 +20,7 @@ public class UserDto {
     private String userName;
     private LocalDateTime createDate;
 
+
     public UserEntity toEntity(){
         UserEntity build = UserEntity.builder()
                 .email(email)
@@ -47,6 +48,10 @@ public class UserDto {
         this.password = password;
     }
 
+    @Builder
+    public void UerDto(String nickName){
+       this.nickName = nickName;
+    }
 
 
 

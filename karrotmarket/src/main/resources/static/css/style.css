@@ -293,6 +293,83 @@ table {
     text-align: center;
     margin-top: 15%;
 }
+#product_footer{
+    width: 94%;
+    height: 10%;
+    position: absolute;
+    bottom: 0;
+    left: 3%;
+    border-top: 1px solid #bcbcbc;
+    align-content: center;
+}
+.userProfile {
+    width: 100%;
+    height: 11%;
+    bottom: 0;
+    left: 3%;
+    border-top: 1px solid #bcbcbc;
+    align-content: center;
+     border-bottom: 1px solid #bcbcbc;
+
+}
+.headerproduct{
+    width:100%;
+    height:40%;
+    background-image:url('https://github.com/qkralswl689/KarrotMarket/blob/main/images/%EC%83%81%ED%92%88%EC%9D%B4%EB%AF%B8%EC%A7%801.png?raw=true');
+    border: 1px solid black;
+}
+.productcommon {
+    display: inline-block;
+    width: 30%;
+    height: auto;
+    float: left;
+    margin-top: 2%;
+    align-content: center;
+}
+.productcommonimg {
+    display: inline-block;
+    width: 20%;
+    height: auto;
+    float: left;
+    margin-top: 2%;
+    align-content: center;
+}
+.photocommon {
+    display: inline-block;
+    width: 20%;
+    height: auto;
+    float: left;
+    margin-top: 2%;
+    align-content: center;
+}
+.profilecommon{
+ display: inline-block;
+    width: 30%;
+    height: auto;
+    float: left;
+    margin-top: 2%;
+    align-content: center;
+
+}
+.productContents{
+   overflow: auto;
+   width:100%;
+   height:40%;
+    border: 1px solid #bcbcbc;
+}
+.productInfo{
+    width:100%;
+    height:20%;
+
+     border: 1px solid #bcbcbc;
+
+}
+.userSoldProducts{
+     width:100%;
+    height:30%;
+     border: 1px solid #bcbcbc;
+
+}
 @media (min-width: 600px) {
     #container {
         min-height: 100%;

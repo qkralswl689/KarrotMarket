@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface CategoryRepository extends JpaRepository<CategoryDto,Long> {
+public interface CategoryRepository extends JpaRepository<CategoryEntity,Long> {
 
-    public List<CategoryDto> findAll();
+    public List<CategoryEntity> findAll();
 }

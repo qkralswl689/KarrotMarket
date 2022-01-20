@@ -1,5 +1,7 @@
 package com.karrot.karrotmarket.controller;
 
+import com.karrot.karrotmarket.category.CategoryEntity;
+import com.karrot.karrotmarket.category.CategoryRepository;
 import com.karrot.karrotmarket.user.dto.UserDto;
 import com.karrot.karrotmarket.user.entity.UserEntity;
 import com.karrot.karrotmarket.user.service.UserServiceImpl;
@@ -10,11 +12,16 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 @Controller
 @RequestMapping("/")
 public class KarrotMarketController {
+    private CategoryRepository categoryRepository;
 
+    public KarrotMarketController(CategoryRepository categoryRepository){
+        this.categoryRepository = categoryRepository;
+    }
 
     @GetMapping
     public String Hello(Model model) {
@@ -50,9 +57,11 @@ public class KarrotMarketController {
 
     @GetMapping("/salePage")
     public String salePage(HttpSession session, Model model) {
+        List<CategoryEntity> category = categoryRepository.findAll();
+
+        model.addAttribute("category",category);
         return "html/salePage";
     }
-
     @GetMapping("/myPage")
     public String myPage(HttpSession session, Model model) {
         return "html/myPage";

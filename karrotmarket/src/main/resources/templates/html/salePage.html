@@ -66,9 +66,9 @@
                    style="width: 100%; border: 0; padding-top: 10%; text-align: center;"/>
         </div>
         <div class="saleCategory">
-            <form id="category-form" th:action="@{'/post/' + category}" method="post">
-                <select name="category" >
-                    <option value="">카테고리</option>
+
+                <select  th:name ="cate">
+                    <option value="" >카테고리</option>
                     <option th:each="categories : ${category}"
                             th:value="${categories.caid}"
                             th:utext="${categories.caname}"></option>
@@ -76,7 +76,7 @@
                                     <option th:each="CategoryEntity: ${list}" th:value="${list.caid}" th:utext="${list.caname}"></option>
                     -->
                 </select>
-            </form>
+
         </div>
         <div class="salePrice">
             <input name="price" placeholder="가격(원)"

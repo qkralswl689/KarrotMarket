@@ -22,6 +22,7 @@ public class PostDto {
     private int like;
     private int userindex;
     private int fileIndex;
+    private int categoryIndex;
 
     public PostEntity toEntity(){
         PostEntity build = PostEntity.builder()
@@ -30,12 +31,13 @@ public class PostDto {
                 .content(content)
                 .price(price)
                 .fileIndex(fileIndex)
+                .categoryIndex(categoryIndex)
                 .build();
         return build;
     }
 
     @Builder
-    public PostDto(int postIndex,String title,String content,int price, int fileIndex,LocalDateTime createdDatetime,LocalDateTime modifyDate,String rangeTown, int like,int userindex){
+    public PostDto(int postIndex,String title,String content,int price, int fileIndex,LocalDateTime createdDatetime,LocalDateTime modifyDate,String rangeTown, int like,int userindex,int categoryIndex){
         this.postIndex = postIndex;
         this.title = title;
         this.content = content;
@@ -46,6 +48,7 @@ public class PostDto {
         this.like = like;
         this.userindex = userindex;
         this.fileIndex = fileIndex;
+        this.categoryIndex = categoryIndex;
     }
 
 }

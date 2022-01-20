@@ -1,5 +1,8 @@
 package com.karrot.karrotmarket.post.controller;
 
+import com.karrot.karrotmarket.category.CategoryDto;
+import com.karrot.karrotmarket.category.CategoryEntity;
+import com.karrot.karrotmarket.category.CategoryServiceImpl;
 import com.karrot.karrotmarket.file.MD5Generator;
 import com.karrot.karrotmarket.file.dto.FileDto;
 import com.karrot.karrotmarket.file.service.FileService;
@@ -26,13 +29,15 @@ public class PostController {
 
     private PostServiceImpl postService;
     private FileServiceImpl fileService;
+    private CategoryServiceImpl categoryService;
 
-    public PostController(PostServiceImpl postService, FileServiceImpl fileService){
+    public PostController(PostServiceImpl postService, FileServiceImpl fileService,CategoryServiceImpl categoryService){
         this.postService = postService;
         this.fileService = fileService;
+        this.categoryService = categoryService;
     }
     @PostMapping("/post")
-    public String write(@RequestParam("file") MultipartFile files, PostDto postDto , HttpServletRequest request, HttpSession session, Model model ){
+    public String write(@RequestParam("file") MultipartFile files, PostDto postDto , @RequestParam("cate")  CategoryDto categoryDto, HttpServletRequest request, HttpSession session, Model model ){
         //세션에 저장된 유저 값을 불러온다.
         UserEntity sessionUser = (UserEntity)session.getAttribute("ConfirmUser");
         try {
@@ -49,6 +54,8 @@ public class PostController {
                     e.getStackTrace();
                 }
             }
+
+
             String filePath = savePath + "\\" + filename;
             files.transferTo(new File(filePath));
 
@@ -57,8 +64,14 @@ public class PostController {
             fileDto.setFileName(filename);
             fileDto.setFilePath(filePath);
 
+            categoryDto.setCaid(categoryDto.getCaid());
+            categoryDto.setCaname(categoryDto.getCaname());
+
+            int categoryIndex = categoryService.saveCategory(categoryDto);
             int fileIndex = fileService.saveFile(fileDto);
             postDto.setFileIndex(fileIndex);
+
+            postDto.setCategoryIndex(categoryIndex);
             postService.savePost(postDto);
         } catch(Exception e) {
             e.printStackTrace();

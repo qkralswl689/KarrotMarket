@@ -18,6 +18,8 @@ public interface UserService {
 
     public UserEntity getNickname(String email);
 
+    public UserEntity getUserIndex(String email);
+
 /*
     public UserEntity login(Map<String, String > map) throws Exception;
 */

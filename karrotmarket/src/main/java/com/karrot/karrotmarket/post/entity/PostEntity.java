@@ -47,14 +47,18 @@ public class PostEntity {
     @Column(name = "categoryindex" )
     private int categoryIndex;
 
+    @Column(name = "userindex")
+    private int userIndex;
+
     @Builder
-    public PostEntity(int postIndex,String title,String content,int price,int fileIndex,int categoryIndex){
+    public PostEntity(int postIndex,String title,String content,int price,int fileIndex,int categoryIndex,int userIndex){
         this.postIndex = postIndex;
         this.title = title;
         this.content = content;
         this.price = price;
         this.fileIndex = fileIndex;
         this.categoryIndex = categoryIndex;
+        this.userIndex = userIndex;
     }
 
 }

@@ -11,6 +11,7 @@ import com.karrot.karrotmarket.post.dto.PostDto;
 import com.karrot.karrotmarket.post.service.PostServiceImpl;
 import com.karrot.karrotmarket.user.dto.UserDto;
 import com.karrot.karrotmarket.user.entity.UserEntity;
+import com.karrot.karrotmarket.user.service.UserServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
 import org.springframework.util.MultiValueMap;
@@ -20,6 +21,7 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
+import javax.swing.text.html.parser.Parser;
 import java.io.File;
 import java.io.IOException;
 import java.util.*;
@@ -30,16 +32,21 @@ public class PostController {
     private PostServiceImpl postService;
     private FileServiceImpl fileService;
     private CategoryServiceImpl categoryService;
+    private UserServiceImpl userService;
 
-    public PostController(PostServiceImpl postService, FileServiceImpl fileService,CategoryServiceImpl categoryService){
+    public PostController(PostServiceImpl postService, FileServiceImpl fileService,CategoryServiceImpl categoryService,UserServiceImpl userService){
         this.postService = postService;
         this.fileService = fileService;
         this.categoryService = categoryService;
+        this.userService = userService;
     }
     @PostMapping("/post")
-    public String write(@RequestParam("file") MultipartFile files, PostDto postDto , @RequestParam("cate")  CategoryDto categoryDto, HttpServletRequest request, HttpSession session, Model model ){
+    public String write(@RequestParam("file") MultipartFile files, PostDto postDto , @RequestParam("category")  int caid, HttpServletRequest request, HttpSession session, Model model ){
         //세션에 저장된 유저 값을 불러온다.
-        UserEntity sessionUser = (UserEntity)session.getAttribute("ConfirmUser");
+        String sessionUser = (String) session.getAttribute("email");
+
+
+
         try {
             String origFilename = files.getOriginalFilename();
             String filename = new MD5Generator(origFilename).toString();
@@ -64,13 +71,13 @@ public class PostController {
             fileDto.setFileName(filename);
             fileDto.setFilePath(filePath);
 
-            categoryDto.setCaid(categoryDto.getCaid());
-            categoryDto.setCaname(categoryDto.getCaname());
 
-            int categoryIndex = categoryService.saveCategory(categoryDto);
+            int categoryIndex = caid;
             int fileIndex = fileService.saveFile(fileDto);
-            postDto.setFileIndex(fileIndex);
+            int user = Math.toIntExact(userService.getUserIndex(sessionUser).getUsertIdx());
 
+            postDto.setFileIndex(fileIndex);
+            postDto.setUserindex(user);
             postDto.setCategoryIndex(categoryIndex);
             postService.savePost(postDto);
         } catch(Exception e) {

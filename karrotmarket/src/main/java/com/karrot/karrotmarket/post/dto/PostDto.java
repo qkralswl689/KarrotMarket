@@ -32,6 +32,7 @@ public class PostDto {
                 .price(price)
                 .fileIndex(fileIndex)
                 .categoryIndex(categoryIndex)
+                .userIndex(userindex)
                 .build();
         return build;
     }

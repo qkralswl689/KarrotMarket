@@ -67,15 +67,15 @@
         </div>
         <div class="saleCategory">
 
-                <select th:field="*{caid}">
-                    <option value="" >카테고리</option>
-                    <option th:each="categories : ${category}"
-                            th:value="${categories.caid}"
-                            th:utext="${categories.caname}"></option>
-                    <!--
-                                    <option th:each="CategoryEntity: ${list}" th:value="${list.caid}" th:utext="${list.caname}"></option>
-                    -->
-                </select>
+            <select id="selectCate" name="category" onchange="chageCategorySelect()">
+                <option value="">카테고리</option>
+                <option th:each="categories : ${category}"
+                        th:value="${categories.caid}"
+                        th:utext="${categories.caname}"></option>
+                <!--
+                                <option th:each="CategoryEntity: ${list}" th:value="${list.caid}" th:utext="${list.caname}"></option>
+                -->
+            </select>
 
         </div>
         <div class="salePrice">
@@ -194,7 +194,19 @@
         )('att_zone', 'btnAtt')
 
 
+
 </script>
+
+<script>
+     function chageCategorySelect(){
+     var CategorySelect = document.getElementById("selectCate");
+     // select element에서 선택된 option의 value가 저장된다.
+     var selectValue = CategorySelect.options[CategorySelect.selectedIndex].value;
+     // select element에서 선택된 option의 text가 저장된다.
+     var selectText = CategorySelect.options[CategorySelect.selectedIndex].text; }
+</script>
+
+
 </body>
 
 </html>

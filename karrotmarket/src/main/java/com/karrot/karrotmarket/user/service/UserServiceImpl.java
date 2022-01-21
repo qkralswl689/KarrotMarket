@@ -64,6 +64,16 @@ public class UserServiceImpl implements UserService {
         return users;
     }
 
+    @Override
+    public UserEntity getUserIndex(String email) {
+
+        UserEntity user = userInfoRepository.findByEmail(email);
+
+        UserEntity users = UserEntity.builder().usertIdx(user.getUsertIdx()).build();
+
+        return users;
+    }
+
   /*  @Override
     public UserEntity login(Map<String, String> map) throws Exception {
         return userInfoRepository.getById();

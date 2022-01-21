@@ -30,7 +30,8 @@
         <div class="mypagecommon mypagetop">
             <img id="imgprofile" src="img/동그라미사람.png" alt="hamburgermenu"
                  style="max-width: 25%; height: auto;  align-content: center; padding-left: 25%;" />
-            <p style="float: right; padding-right: 20%; padding-top: 10%; text-size-adjust: 20;">닉네임</p>
+
+            <div style="float: right; padding-right: 20%; padding-top: 10%; text-size-adjust: 20;" th:text="${nickname}"></div>
         </div>
 
         <button class="modifyProfileBtn">프로필 수정</button>

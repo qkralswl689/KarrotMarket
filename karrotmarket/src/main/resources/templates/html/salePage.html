@@ -67,7 +67,7 @@
         </div>
         <div class="saleCategory">
 
-                <select  th:name ="cate">
+                <select th:field="*{caid}">
                     <option value="" >카테고리</option>
                     <option th:each="categories : ${category}"
                             th:value="${categories.caid}"

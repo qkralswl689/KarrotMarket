@@ -18,9 +18,11 @@ import java.util.List;
 @RequestMapping("/")
 public class KarrotMarketController {
     private CategoryRepository categoryRepository;
+    private UserServiceImpl userService;
 
-    public KarrotMarketController(CategoryRepository categoryRepository){
+    public KarrotMarketController(CategoryRepository categoryRepository,UserServiceImpl userService){
         this.categoryRepository = categoryRepository;
+        this.userService = userService;
     }
 
     @GetMapping
@@ -64,6 +66,14 @@ public class KarrotMarketController {
     }
     @GetMapping("/myPage")
     public String myPage(HttpSession session, Model model) {
+
+        String sessionUser = (String) session.getAttribute("email");
+
+        String nickName = userService.getNickname(sessionUser).getNickName();
+        model.addAttribute("nickname",nickName);
+
+
+
         return "html/myPage";
     }
 

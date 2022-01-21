@@ -15,6 +15,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.time.LocalDate;
 import java.util.Date;
@@ -32,10 +33,17 @@ public class UserController {
 
     private UserInfoRepository userInfoRepository;
 
+
     @PostMapping("/login")
-    public String loginId(@ModelAttribute LoginDto user) {
+    public String loginId(@ModelAttribute LoginDto user, HttpServletRequest request) {
         if(userService.login(user)){
-            return "redirect:/home";
+
+            String uid = request.getParameter("email");
+
+            HttpSession session = request.getSession(); // 세션을 생성해서
+            session.setAttribute("email", uid); // userid로 uid값을 넘기자
+
+            return "redirect:/myPage";
         }
         return "/login";
     }

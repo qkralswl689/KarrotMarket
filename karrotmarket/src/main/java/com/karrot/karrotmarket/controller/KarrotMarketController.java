@@ -49,7 +49,7 @@ public class KarrotMarketController {
 
     @GetMapping("/login")
     public String login(HttpSession session, Model model) {
-        return "html/login";
+        return "html/home";
     }
 
     @GetMapping("/home")

@@ -6,8 +6,8 @@
     <title>Home</title>
     <link rel="stylesheet" href="../css/style.css" th:href="@{../css/style.css}">
     <!--
-        <link rel="stylesheet" href="style.css" />
-    -->
+          <link rel="stylesheet" href="style.css" />
+      -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Document</title>
@@ -25,58 +25,69 @@
         <button class="plusBtn" th:onclick="|location.href='/salePage'|">+</button>
     </div>
 
-    <div id="content">
+    <div class="content_product">
         <div class="productInfo">
-            <div class="productImg"></div>
-            <div class="productInfo">
+         <!--   <div class="productImg">
+                &lt;!&ndash;<img th:src="${postFile.getFilename()}"
+                     style="max-width: 25%; height: auto;  align-content: center; float:left;"/>&ndash;&gt;
+            </div>
+            <div class="productlistcommon">
                 <div>
                     <div>제목</div>
                     <div>
-                        <div></div>
-                    </div>
-                    <div>
-                        <div>장소</div>
+&lt;!&ndash;
+                        <div th:text="${post.title}"></div>
+&ndash;&gt;
                         <div>
-                            <div></div>
-                        </div>
-                        <div>
-                            <div>가격</div>
+                            <div>장소</div>
                             <div>
-                                <div></div>
+                                &lt;!&ndash;
+                                            <div th:text="${post.place}"></div>
+                &ndash;&gt;
                             </div>
                             <div>
-                                <div>제목</div>
+                                <div>가격</div>
                                 <div>
-                                    <div></div>
+&lt;!&ndash;
+                                    <div th:text="${post.price}"></div>
+&ndash;&gt;
+                                    <div>
+                                        <div></div>
+                                        <div>
+                                            <div></div>
+                                        </div>
+
+                                    </div>
+
                                 </div>
-
                             </div>
-
-                        </div>
-
-
-                    </div>
-                    <div id="footer_home">
-                        <div class="homecommon">
-                            <img id="img_hous" src="img/집.png" alt="hamburgermenu"
-                                 style="max-width: 50%; height: auto;  align-content: center; padding-left: 25%;"/>
-                            <!--<img id="img_hous" src="images/집.png" alt="hamburgermenu"
-                                 style="max-width: 50%; height: auto;  align-content: center; padding-left: 25%;" />-->
-                        </div>
-                        <div class="homecommon">
-                            <img id="img_person" src="img/사람.png" alt="search"
-                                 style="max-width: 50%; height: auto;  align-content: center; padding-left: 25%;"/>
-                        </div>
-                        <div class="homecommon">
-                            <p style="align-content: center; padding-left: 45%;"> 홈</p>
-                        </div>
-                        <div class="homecommon">
-                            <p style="align-content: center; padding-left: 30%;"> 나의 당근</p>
                         </div>
                     </div>
-                </div>
-
+                </div>-->
             </div>
+            <div id="footer_home">
+                <div class="homecommon">
+                    <img id="img_hous" src="img/집.png" alt="hamburgermenu"
+                         style="max-width: 50%; height: auto;  align-content: center; padding-left: 25%;"/>
+                    <!--<img id="img_hous" src="images/집.png" alt="hamburgermenu"
+                                             style="max-width: 50%; height: auto;  align-content: center; padding-left: 25%;" />-->
+                </div>
+                <div class="homecommon">
+                    <img id="img_person" src="img/사람.png" alt="search"
+                         style="max-width: 50%; height: auto;  align-content: center; padding-left: 25%;"  th:action="@{'/post/' + ${post.id}}"/>
+                </div>
+                <div class="homecommon">
+                    <p style="align-content: center; padding-left: 45%;"> 홈</p>
+                </div>
+                <div class="homecommon">
+                    <p style="align-content: center; padding-left: 30%;" > 나의 당근</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
 </body>
 
 </html>

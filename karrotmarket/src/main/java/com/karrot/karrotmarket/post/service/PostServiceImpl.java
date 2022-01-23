@@ -41,14 +41,13 @@ public class PostServiceImpl implements PostService {
     }
 
     @Override
-    public List<PostDto> selectBoardList() throws Exception {
-        return null;
+    public List<PostEntity> getPosts() throws Exception {
+
+        List<PostEntity> postList = (List<PostEntity>) postRepository.findAll();
+        return postList;
     }
 
-    @Override
-    public void saveBoard(PostDto post, MultipartHttpServletRequest multipartHttpServletRequest, int hitCnt) throws Exception {
 
-    }
 
     @Override
     public PostDto selectPostDetail(int postIndex) throws Exception {

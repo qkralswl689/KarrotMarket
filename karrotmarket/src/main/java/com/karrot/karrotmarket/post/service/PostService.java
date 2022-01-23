@@ -2,6 +2,7 @@ package com.karrot.karrotmarket.post.service;
 
 import com.karrot.karrotmarket.post.dto.PostDto;
 import com.karrot.karrotmarket.file.entity.FileEntity;
+import com.karrot.karrotmarket.post.entity.PostEntity;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
 import java.util.List;
@@ -11,9 +12,9 @@ public interface PostService {
     int savePost(PostDto postDto);
 
     PostDto getPost(int postIndex);
-    List<PostDto> selectBoardList() throws Exception;
 
-    void saveBoard(PostDto post, MultipartHttpServletRequest multipartHttpServletRequest, int hitCnt) throws Exception;
+    List<PostEntity> getPosts() throws Exception;
+
 
     PostDto selectPostDetail(int postIndex) throws Exception;
 

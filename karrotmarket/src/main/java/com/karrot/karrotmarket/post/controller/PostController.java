@@ -8,6 +8,7 @@ import com.karrot.karrotmarket.file.dto.FileDto;
 import com.karrot.karrotmarket.file.service.FileService;
 import com.karrot.karrotmarket.file.service.FileServiceImpl;
 import com.karrot.karrotmarket.post.dto.PostDto;
+import com.karrot.karrotmarket.post.entity.PostEntity;
 import com.karrot.karrotmarket.post.service.PostServiceImpl;
 import com.karrot.karrotmarket.user.dto.UserDto;
 import com.karrot.karrotmarket.user.entity.UserEntity;
@@ -83,64 +84,34 @@ public class PostController {
         } catch(Exception e) {
             e.printStackTrace();
         }
-        return "redirect:/";
+        return "redirect:/home";
 
     }
- /*   @PostMapping("/post")
-    public String write( PostDto postDto ){
-       *//* //세션에 저장된 유저 값을 불러온다.
-        UserEntity sessionUser = (UserEntity)session.getAttribute("ConfirmUser");*//*
-        try {
 
-            postService.savePost(postDto);
-        } catch(Exception e) {
-            e.printStackTrace();
-        }
-        return "redirect:/";
-
-    }*/
-/*    @PostMapping("/upload")
-    public String uploadFile(@RequestParam MultipartFile[] uploadFiles, Model model) throws IOException {
-
-        List<FileDto> list = new ArrayList<>();
-        for(MultipartFile file : uploadFiles){
-            if(!file.isEmpty()){
+    @GetMapping("/home/read")
+    public String read(Model model,HttpSession session) throws Exception {
+        String sessionUser = (String) session.getAttribute("email");
+        model.addAttribute("loginUser",sessionUser);
+        int userIndex = Math.toIntExact(userService.getUserIndex(sessionUser).getUsertIdx());
 
 
+        List<PostEntity> posts = postService.getPosts();
 
-            }
-        }
-      model.addAttribute("files",list);
-        return "result";
-    }*/
- @RequestMapping(value = "/url",method = RequestMethod.POST)
- public String getData(Model model, MultipartHttpServletRequest req) {
-
-     //get image file.
-     List<MultipartFile> multipartFileList = new ArrayList<>();
-     try {
-         MultiValueMap<String, MultipartFile> files = req.getMultiFileMap();
-         for (Map.Entry<String, List<MultipartFile>> entry : files.entrySet()) {
-             List<MultipartFile> fileList = entry.getValue();
-             for (MultipartFile file : fileList) {
-                 if (file.isEmpty()) continue;
-                 multipartFileList.add(file);
-             }
-         }
-
-         if (multipartFileList.size() > 0) {
-             for (MultipartFile file : multipartFileList) {
-                 file.transferTo(new File("/img" + File.separator + file.getOriginalFilename()));
-             }
-         }
-     } catch (Exception e) {
-         e.printStackTrace();
-     }
+        FileDto fileDto = new FileDto();
 
 
-     model.addAttribute("log", "사진 " + multipartFileList.size() + "장 전송완료!");
-     return "html템플릿 주소 :: #resultDiv";
- }
+        int fileIndex = fileDto.getFileIndex();
 
+        FileDto fileList = fileService.getFile(fileIndex);
 
+        fileDto.setFileName(fileList.getFileName());
+        fileDto.setFileOriginName(fileList.getFileOriginName());
+        fileDto.setFilePath(fileList.getFilePath());
+
+        model.addAttribute("post",posts);
+        model.addAttribute("postFile",fileList);
+
+        return "/home";
+
+    }
 }

@@ -43,7 +43,10 @@ public class UserController {
             HttpSession session = request.getSession(); // 세션을 생성해서
             session.setAttribute("email", uid); // userid로 uid값을 넘기자
 
-            return "redirect:/myPage";
+
+            int userIndex = Math.toIntExact(userService.getUserIndex(uid).getUsertIdx());
+
+            return "redirect:/home" ;
         }
         return "/login";
     }
@@ -55,7 +58,7 @@ public class UserController {
 
 
         userService.register(userdto);
-        return "redirect:/goToLogin";
+        return "redirect:/login";
     }
 
 
